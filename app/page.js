@@ -1,5 +1,6 @@
 import { CHECKOUT_URL, PRICE, SUPPORT } from "../config";
 import Reveal from "../components/Reveal";
+import Effects from "../components/Effects";
 
 const buy = { href: CHECKOUT_URL, target: "_blank", rel: "noopener" };
 
@@ -33,6 +34,8 @@ export default function Page() {
   return (
     <>
       <Reveal />
+      <Effects />
+      <div className="bg" aria-hidden="true"><i className="blob a" /><i className="blob b" /><i className="blob c" /><i className="shape s1" /><i className="shape s2" /><i className="shape s3" /><i className="shape s4" /><i className="shape s5" /></div>
       <header className="nav">
         <div className="wrap">
           <a href="#" className="logo"><i />Saf-Bridge</a>
@@ -51,17 +54,16 @@ export default function Page() {
           <div className="wrap">
             <div className="hero-card">
               <div style={{ position: "relative", zIndex: 1 }}>
-                <h1>Menos exportar, mais animar.</h1>
+                <h1><span>Menos</span> <span>exportar,</span> <span>mais animar.</span></h1>
                 <p className="sub">Do Figma pro After Effects em 1 clique · camadas e textos editáveis.</p>
                 <div className="ctas">
-                  <a className="btn btn-white" {...buy}>Comprar agora <span className="arrow">→</span></a>
+                  <a className="btn btn-white pulse" {...buy}>Comprar agora <span className="arrow">→</span></a>
                   <a className="btn btn-ghost" href="#como-funciona">Ver como funciona</a>
                 </div>
                 <div className="chips">
                   <span className="chip"><b>✓</b> Textos editáveis</span>
                   <span className="chip"><b>✓</b> Camadas separadas</span>
                   <span className="chip"><b>✓</b> AE 2020–2026</span>
-                  <span className="chip"><b>✓</b> 2 PCs</span>
                 </div>
               </div>
               <div className="demo" aria-hidden="true">
@@ -91,17 +93,17 @@ export default function Page() {
               <h2>Três passos. Zero exportação manual.</h2>
             </div>
             <div className="steps">
-              <div className="card step" data-reveal="1">
+              <div className="card step" data-tilt="10" data-reveal="1">
                 <div className="n">1</div>
                 <h3>Selecione no Figma</h3>
                 <p>Escolha um frame, grupo ou componente. O plugin mostra a miniatura, a resolução e quantas camadas vão sair.</p>
               </div>
-              <div className="card step" data-reveal="2">
+              <div className="card step" data-tilt="10" data-reveal="2">
                 <div className="n">2</div>
                 <h3>Envie pro After</h3>
                 <p>Defina a escala (1× a 4×) e clique em <b>Send to After Effects</b>. Cada camada vai com posição, mesclagem e hierarquia.</p>
               </div>
-              <div className="card step" data-reveal="3">
+              <div className="card step" data-tilt="10" data-reveal="3">
                 <div className="n">3</div>
                 <h3>Importe e anime</h3>
                 <p>No painel do After, clique em <b>Importar</b> ou deixe a importação automática ligada. Pronto para animar.</p>
@@ -117,7 +119,7 @@ export default function Page() {
               <h2>O mesmo frame. Outro dia de trabalho.</h2>
             </div>
             <div className="vs">
-              <div className="card before" data-reveal="1">
+              <div className="card before" data-tilt="6" data-reveal="1">
                 <h3>Do jeito manual <span className="tag slow">horas</span></h3>
                 <ul>
                   <li>Exportar camada por camada do Figma</li>
@@ -127,7 +129,7 @@ export default function Page() {
                   <li>Refazer a hierarquia e os modos de mesclagem</li>
                 </ul>
               </div>
-              <div className="card after" data-reveal="2">
+              <div className="card after" data-tilt="6" data-reveal="2">
                 <h3>Com o Saf-Bridge <span className="tag fast">1 clique</span></h3>
                 <ul>
                   <li>Um clique no Figma manda o frame inteiro</li>
@@ -149,7 +151,7 @@ export default function Page() {
             </div>
             <div className="features">
               {features.map((f, k) => (
-                <div className="card feature" key={f.t} data-reveal={(k % 3) + 1}>
+                <div className="card feature" data-tilt="12" key={f.t} data-reveal={(k % 3) + 1}>
                   <Icon d={f.i} />
                   <h3>{f.t}</h3>
                   <p>{f.p}</p>
@@ -169,7 +171,7 @@ export default function Page() {
                 <div className="glass"><strong>AE 2020–2026</strong><span>After Effects</span></div>
                 <div className="glass"><strong>Win + Mac</strong><span>Windows e macOS</span></div>
                 <div className="glass"><strong>Figma app</strong><span>versão para computador</span></div>
-                <div className="glass"><strong>2 PCs</strong><span>troca de PC liberada</span></div>
+                <div className="glass"><strong>Offline</strong><span>nada sai do seu PC</span></div>
               </div>
             </div>
           </div>
@@ -179,10 +181,10 @@ export default function Page() {
           <div className="wrap">
             <div className="head center" data-reveal>
               <span className="eyebrow">Preço</span>
-              <h2>Uma licença. Dois computadores.</h2>
+              <h2>Comece a animar hoje.</h2>
             </div>
-            <div className="card price-card" data-reveal>
-              <span className="badge">Licença para 2 PCs</span>
+            <div className="card price-card" data-tilt="6" data-reveal>
+              <span className="badge">Figma → After Effects</span>
               {PRICE ? <div className="value">{PRICE}</div> : <div className="value" style={{ fontSize: "2.2rem" }}>Saf-Bridge</div>}
               <p>Plugin do Figma + painel do After Effects</p>
               <ul>
@@ -221,7 +223,7 @@ export default function Page() {
               <div style={{ position: "relative", zIndex: 1 }}>
                 <h2 style={{ color: "#fff" }}>Bora parar de exportar?</h2>
                 <p className="sub">Do Figma pro After Effects em 1 clique · camadas e textos editáveis.</p>
-                <a className="btn btn-white" {...buy}>Comprar agora <span className="arrow">→</span></a>
+                <a className="btn btn-white pulse" {...buy}>Comprar agora <span className="arrow">→</span></a>
               </div>
             </div>
           </div>
