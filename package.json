@@ -1,6 +1,14 @@
 {
   "name": "saf-bridge-site",
   "private": true,
-  "scripts": { "dev": "next dev -p 3210", "build": "next build", "start": "next start" },
-  "dependencies": { "next": "15.5.4", "react": "19.1.1", "react-dom": "19.1.1" }
+  "scripts": {
+    "dev": "next dev -p 3210",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.5.29",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  }
 }
