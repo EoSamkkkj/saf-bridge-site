@@ -1,4 +1,5 @@
-import { CHECKOUT_URL, PRICE, SUPPORT } from "../config";
+import { CHECKOUT_URL, PRICE, SUPPORT, INSTAGRAM_URL, WHATSAPP, WHATSAPP_LABEL } from "../config";
+const WA = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Oi! Vim pelo site do Saf-Bridge.")}`;
 import Reveal from "../components/Reveal";
 import Effects from "../components/Effects";
 
@@ -25,7 +26,7 @@ const faq = [
   ["Quais versões do After Effects?", "Do After Effects 2020 ao 2026, no Windows e no Mac. Trechos de texto com estilos diferentes na mesma camada precisam do After 24.3 ou mais novo."],
   ["Posso usar em mais de um computador?", "Sim. A licença vale para 2 computadores e a troca de PC é liberada."],
   ["Preciso de internet?", "Só para ativar a licença. Depois, a ponte entre Figma e After roda offline, no seu computador."],
-  ["Como recebo a licença?", "A ativação usa o e-mail da compra. Comprou, é só ativar no painel com esse e-mail."],
+  ["Como recebo a licença?", `A ativação usa o e-mail da compra. Comprou, é só ativar no painel com esse e-mail. Qualquer problema, chame no WhatsApp ${WHATSAPP_LABEL}.`],
   ["Tudo vem editável?", "Os textos vêm como camadas de texto editáveis. Vetores e frames com efeitos vêm como imagem, na escala que você escolher, para não perder a aparência. Sombras e efeitos de texto precisam ser refeitos no After."],
   ["E se uma fonte não estiver instalada?", "O Saf-Bridge procura a fonte pelo nome e acha o peso mais próximo. Se nenhuma parecida existir, o texto vem como imagem e o painel avisa qual fonte instalar."],
 ];
@@ -192,10 +193,10 @@ export default function Page() {
                 <li>After Effects 2020 a 2026 · Windows e Mac</li>
                 <li>Ativação pelo e-mail da compra</li>
                 <li>Troca de PC liberada</li>
-                <li>Suporte pelo {SUPPORT}</li>
+                <li>Suporte pelo WhatsApp e Instagram</li>
               </ul>
               <a className="btn btn-primary" {...buy}>Comprar agora <span className="arrow">→</span></a>
-              <small>Pagamento seguro pelo checkout. A licença chega no seu e-mail.</small>
+              <small>Pagamento seguro pela Cakto · 7 dias de garantia</small>
             </div>
           </div>
         </section>
@@ -233,7 +234,7 @@ export default function Page() {
       <footer>
         <div className="wrap">
           <span className="logo"><i />Saf-Bridge</span>
-          <span>Suporte e bugs: <b>{SUPPORT}</b></span>
+          <span>Suporte: <a href={WA} target="_blank" rel="noopener"><b>WhatsApp {WHATSAPP_LABEL}</b></a> · <a href={INSTAGRAM_URL} target="_blank" rel="noopener"><b>{SUPPORT}</b></a></span>
           <span>© {new Date().getFullYear()} Saf-Bridge · por EoSamKkkj</span>
         </div>
       </footer>
